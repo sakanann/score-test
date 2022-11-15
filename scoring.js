@@ -23,6 +23,9 @@ $(document).ready(function () {
     $("#sum_indicate").text(sum);
 
     // 「平均点：」に各教科の平均点を出力する処理を記述する。
+    let average = sum / subject_points.length;
+    $("#average_indicate").text(average);
+
     // ヒント：変数「average」に平均値を出して代入しましょう(平均をとりたい数の合計点数(sum) / 全体の個数)
     // ヒント：全体の個数はlengthメソッドを使って求めます。(lengthメソッド: 文字列の長さや配列の要素数などを取得するメソッド)
   };
@@ -103,7 +106,8 @@ $(document).ready(function () {
   // ２回目以降に「最終ジャッジ」ボタンを押した際は、それまでに表示していたジャッジのHTML要素を削除して、新たなジャッジのHTML要素を追加する。
   // ヒント：removeメソッドについて調べてみましょう。
   $('#btn-declaration').click(function () {
+  $("#alert-indicate").remove();
+    $("#declaration").text(judgement());
   });
 });
-
 // ここに書かれているJavaScriptの記述はあくまでヒントとして用意された雛形なので、書かれている記述に従わずに実装したいという場合は、自分の好きに実装して構いません。合格要件をすべて満たしていれば合格となります。
